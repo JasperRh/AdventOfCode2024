@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// https://adventofcode.com/2024/day/1
+// https://adventofcode.com/2024/day/1#part2
 
 var input = File.ReadAllLines("../../../input.txt");
 var columns = input.Select(line => line.Split("   ")).ToList();
@@ -16,7 +17,6 @@ var rightColumn = columns
 var sum = leftColumn.Select((number, index) => Math.Abs(number - rightColumn.ElementAt(index))).Sum();
 
 Console.WriteLine("Total sum: " + sum);
-Console.ReadLine();
 
 // Part 2
 var rightColumnGrouped = rightColumn.ToLookup(number => number);
